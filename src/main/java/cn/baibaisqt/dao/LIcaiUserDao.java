@@ -9,6 +9,7 @@ import cn.baibaisqt.domain.LicaiUser;
 public interface LIcaiUserDao {
 
     LicaiUser selectOneByUserNameAndPwd(String username,String password);
-
+    LicaiUser selectOneById(String id);
+    void updateUserById(String id, String password , String email , String tel);
 
 }

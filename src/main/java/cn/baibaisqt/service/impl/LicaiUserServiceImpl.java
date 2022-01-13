@@ -16,4 +16,14 @@ public class LicaiUserServiceImpl  implements LicaiUserService {
     public LicaiUser findOneByNameAndPwd(String username, String password) {
         return lIcaiUserDao.selectOneByUserNameAndPwd(username, password);
     }
+
+    @Override
+    public LicaiUser findOneById(String id) {
+        return lIcaiUserDao.selectOneById(id);
+    }
+
+    @Override
+    public void modifyOneById(String id, String password, String email, String tel) {
+            lIcaiUserDao.updateUserById(id, password, email, tel);
+    }
 }

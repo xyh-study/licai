@@ -42,7 +42,7 @@
                     <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
                 </script>
                 <script type="text/html" id="imgTpl">
-                    <div style="width: 100%; height: 100%; display: flex; justify-content: center;"><img src="{{d.u_img}}" style="height: 30px; width: 30px; border-radius: 50%;"></div>
+                    <div style="width: 100%; height: 100%; display: flex; justify-content: center;"><img src="{{d.uImg}}" style="height: 30px; width: 30px; border-radius: 50%;"></div>
                 </script>
             </div>
         </div>
@@ -57,17 +57,17 @@
 
         table.render({
             elem: "#table-demo",
-            url: './member?method=memberInfo&id=${sessionScope.map.id}',
+            url: './member?method=memberInfo&id=${sessionScope.user.id}',
             id: 'table-search',
             page: true,
             cols:[
                 [
                     {field: 'id', title: 'ID', width:100, fixed: 'left'}
-                    ,{field: 'u_img', title: '用户头像', width:100, templet: '#imgTpl'}
-                    ,{field: 'u_name', title: '用户账号', width:100}
-                    ,{field: 'u_tel', title: '用户电话', width:100}
-                    ,{field: 'u_email', title: '用户邮箱', width:100}
-                    ,{field: 'u_desc', title: '用户描述', width: 177}
+                    ,{field: 'uImg', title: '用户头像', width:100, templet: '#imgTpl'}
+                    ,{field: 'uName', title: '用户账号', width:100}
+                    ,{field: 'uTel', title: '用户电话', width:100}
+                    ,{field: 'uEmail', title: '用户邮箱', width:100}
+                    ,{field: 'uDesc', title: '用户描述', width: 177}
                     ,{title: '操作', toolbar: "#barDemo", width: 277, fixed: 'right'}
                 ]
             ]
@@ -100,10 +100,10 @@
                 });
             } else if(obj.event === "edit") {
                 var id = data.id;
-                var u_name = data.u_name;
-                var u_email = data.u_email;
-                var u_tel = data.u_tel;
-                xadmin.open('编辑','member-edit.jsp?id='+id+'&u_name='+u_name+'&u_email='+u_email+"&u_tel="+u_tel,600,400);
+                var uName = data.uName;
+                var uEmail = data.uEmail;
+                var uTel = data.uTel;
+                xadmin.open('编辑','member-edit.jsp?id='+id+'&uName='+uName+'&uEmail='+uEmail+"&uTel="+uTel,600,400);
             }
         });
 
